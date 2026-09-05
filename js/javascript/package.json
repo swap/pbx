@@ -1,0 +1,45 @@
+{
+  "name": "@snowcats/pbx",
+  "version": "0.1.0",
+  "description": "PBX security middleware and client SDK (JavaScript)",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./express": {
+      "types": "./middleware/express.d.ts",
+      "import": "./middleware/express.js"
+    },
+    "./fastify": {
+      "types": "./middleware/fastify.d.ts",
+      "import": "./middleware/fastify.js"
+    },
+    "./nextjs": {
+      "types": "./middleware/nextjs.d.ts",
+      "import": "./middleware/nextjs.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "protobufjs": "^7.4.0"
+  },
+  "peerDependencies": {
+    "express": ">=4",
+    "fastify": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "express": { "optional": true },
+    "fastify": { "optional": true }
+  },
+  "files": [
+    "**/*.js",
+    "**/*.d.ts",
+    "protocol/pbx.proto"
+  ]
+}

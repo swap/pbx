@@ -1,0 +1,10 @@
+import { type EnvelopeData } from "../protocol/types.js";
+export declare function computeMac(key: Uint8Array, keyId: string, envelope: Omit<EnvelopeData, "mac">): Uint8Array;
+export declare function verifyMac(key: Uint8Array, envelope: EnvelopeData): void;
+export declare function wrapDek(key: Uint8Array, keyId: string, dek: Uint8Array): Uint8Array;
+export declare function unwrapDek(key: Uint8Array, keyId: string, wrapped: Uint8Array): Uint8Array;
+export declare function encryptPayload(dek: Uint8Array, plaintext: Uint8Array): Uint8Array;
+export declare function decryptPayload(dek: Uint8Array, ciphertext: Uint8Array): Uint8Array;
+export declare function generateDek(): Uint8Array;
+export declare function sealPayload(key: Uint8Array, keyId: string, requestId: string, plaintext: Uint8Array, timestampMs?: number): EnvelopeData;
+export declare function openPayload(key: Uint8Array, envelope: EnvelopeData): Uint8Array;

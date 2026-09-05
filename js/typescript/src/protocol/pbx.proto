@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pbx;
+
+message Envelope {
+  uint32 version = 1;
+  string key_id = 2;
+  int64 timestamp_ms = 3;
+  string request_id = 4;
+  bytes nonce = 5;
+  bytes wrapped_dek = 6;
+  bytes ciphertext = 7;
+  bytes mac = 8;
+}
